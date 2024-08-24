@@ -19,7 +19,7 @@ export default function DashboardLayout({
     
     return (
         <section className="grid grid-rows-10 grid-cols-16 w-screen h-screen">
-            <header className="bg-red-400 row-start-1 row-end-2 col-start-2 col-end-17">
+            <header className="bg-red-400 row-start-1 row-end-2 col-start-4 col-end-17">
                 <div className="flex h-full items-center gap-4 border-b bg-muted/40 px-4 lg:px-6">
                     {/* <NavbarMobile
                         activeItem={activeItem}
@@ -65,10 +65,10 @@ export default function DashboardLayout({
                     </DropdownMenu>
                 </div>
             </header>
-            <nav className="bg-black row-start-1 row-end-11 col-start-1 col-end-2">
+            <nav className="bg-yellow-200 row-start-1 row-end-11 col-start-1 col-end-4">
                 navbar
             </nav>
-            <main className="bg-slate-500 row-start-2 row-end-11 col-start-2 col-end-17">
+            <main className="bg-slate-500 row-start-2 row-end-11 col-start-4 col-end-17">
                 <ScrollArea className="h-full w-full">
                     {children}
                 </ScrollArea>
