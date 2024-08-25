@@ -18,11 +18,11 @@ export default function DashboardLayout({
     const [openSidebar, setOpenSidebar] = useState<boolean>(true)
 
     return (
-        <>
-            <nav className="bg-lime-400 hidden lg:inline float-left w-1/5 h-screen">
+        <div className="w-screen">
+            <nav className={`bg-lime-400 hidden lg:inline float-left ${openSidebar ? "w-[20vw]" : "w-[6vw]"} w-1/5 h-screen transition-all duration-300`}>
                 navbar
             </nav>
-            <header className="bg-orange-500 block w-full h-[6vh] lg:h-[9vh] lg:w-4/5 lg:ml-[20%]">
+            <header className="bg-orange-500 block h-[6vh] lg:h-[9vh] lg:w-screen transition-all duration-300">
                 <div className="flex h-full items-center gap-4 border-b bg-muted/40 px-4 lg:px-6">
                     <Button
                         variant="outline"
@@ -63,9 +63,11 @@ export default function DashboardLayout({
                     </DropdownMenu>
                 </div>
             </header>
-            <main className="bg-yellow-400 block h-[94vh] lg:h-[91vh] lg:w-4/5 lg:ml-[20%]">
-                {children}
+            <main className="bg-yellow-400 h-[calc(100vh-6vh)] lg:h-[calc(100vh-9vh)] transition-all duration-300">
+                <ScrollArea className="h-full">
+                    {children}
+                </ScrollArea>
             </main>
-        </>
+        </div>
     )
 }
